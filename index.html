@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danielle's Homemade Food</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Danielle's Homemade Food</h1>
+        <p>Delicious homemade dishes just for you!</p>
+    </header>
+
+    <section id="dishes">
+        <h2>Our Dishes</h2>
+        <div class="dish">
+            <img src="dish1.webp" alt="Dish 1">
+            <h3>Carbonara</h3>
+            <p>$10.00</p>
+            <button onclick="orderDish('Dish 1')">Order Now</button>
+        </div>
+        <div class="dish">
+            <img src="dish2.jpg" alt="Dish 2">
+            <h3>Pizza</h3>
+            <p>$12.00</p>
+            <button onclick="orderDish('Dish 2')">Order Now</button>
+        </div>
+        <div class="dish">
+            <img src="dish3.jpg" alt="Dish 3">
+            <h3>Tacos</h3>
+            <p>$15.00</p>
+            <button onclick="orderDish('Dish 3')">Order Now</button>
+        </div>
+        <div class="dish">
+            <img src="dish4.webp" alt="Dish 4">
+            <h3>Banh Mi</h3>
+            <p>$9.00</p>
+            <button onclick="orderDish('Dish 4')">Order Now</button>
+        </div>
+        <div class="dish">
+            <img src="dish5.jpg" alt="Dish 5">
+            <h3>Poke Bol</h3>
+            <p>$11.00</p>
+            <button onclick="orderDish('Dish 5')">Order Now</button>
+        </div>
+    </section>
+
+    <section id="reviews">
+        <h2>Customer Reviews</h2>
+        <form id="reviewForm" onsubmit="submitReview(event)">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            <label for="rating">Rating:</label>
+            <select id="rating" required>
+                <option value="5">5 - Excellent</option>
+                <option value="4">4 - Very Good</option>
+                <option value="3">3 - Good</option>
+                <option value="2">2 - Fair</option>
+                <option value="1">1 - Poor</option>
+            </select>
+            <label for="review">Review:</label>
+            <textarea id="review" required></textarea>
+            <button type="submit">Submit Review</button>
+        </form>
+        <div id="reviewsList"></div>
+    </section>
+
+    <section id="subscribe">
+        <h2>Subscribe for Discounts</h2>
+        <form id="subscribeForm" onsubmit="submitSubscription(event)">
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </section>
+
+
+
+    <script src="scripts.js"></script>
+</body>
+</html>
