@@ -1,6 +1,35 @@
 function orderDish(dishName) {
-    alert(`You have ordered: ${dishName}`);
+    // Assume you have logic here to process the order
+    
+    // Add the price for each dish
+    let price = 0;
+    switch(dishName) {
+        case 'Carbonara':
+        case 'Pizza':
+            price = 12.00;
+            break;
+        case 'Tacos':
+        case 'Banh Mi':
+            price = 9.00;
+            break;
+        case 'PokeBol':
+            price = 18.00;
+            break;
+        default:
+            price = 0;
+    }
+
+    // Push the revenue data to the data layer
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+        'event': 'purchase',
+        'transactionValue': price,
+        'dishName': dishName
+    });
+
+    alert('You have ordered: ' + dishName + ' for $' + price.toFixed(2));
 }
+
 
 function submitReview(event) {
     event.preventDefault();
@@ -31,4 +60,19 @@ function submitSubscription(event) {
     alert(`Thank you for subscribing! Discounts will be sent to: ${email}`);
 
     document.getElementById('subscribeForm').reset();
+}
+
+function viewAllReviews() {
+    const reviewsList = document.getElementById('reviewsList');
+    const reviews = reviewsList.children;
+    let allReviews = '';
+
+    for (let i = 0; i < reviews.length; i++) {
+        const reviewElement = reviews[i];
+        const nameRating = reviewElement.querySelector('h4').textContent;
+        const reviewText = reviewElement.querySelector('p').textContent;
+        allReviews += `${nameRating}\n${reviewText}\n\n`;
+    }
+
+    alert(allReviews);
 }
