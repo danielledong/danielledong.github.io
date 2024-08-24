@@ -43,7 +43,8 @@ function submitReview(event) {
     window.dataLayer.push({
         'event': 'reviewSubmission',
         'reviewerName': name,
-        'rating': rating
+        'rating': rating,
+        'review': review
     });
 
     const reviewHTML = `
