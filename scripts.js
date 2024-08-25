@@ -23,7 +23,7 @@ function orderDish(dishName) {
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
         'event': 'purchase',
-        'transactionValue': price,
+        'price': price,
         'dishName': dishName
     });
 
